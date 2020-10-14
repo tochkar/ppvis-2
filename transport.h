@@ -65,3 +65,96 @@ namespace transp
 
 		std::string get_engineType();
 	};
+
+
+	class Water_Transport : public Transport
+	{
+	protected:
+		unsigned int crewCount;
+		bool isWomanOnBoard;
+	public:
+		Water_Transport();
+
+		void set_crewCount(unsigned int crewCount);
+
+		unsigned int get_crewCount();
+
+		void set_isWomanOnBoard(bool isWomanOnBoard);
+
+		bool get_isWomanOnBoard();
+	};
+
+
+	class Planes : public Air_Transport
+	{
+	private:
+		unsigned int wingsCount;
+		bool isIFR;
+	public:
+		Planes();
+
+		void set_wingCount(unsigned int wingsCount);
+
+		unsigned int get_wingsCount();
+
+		void set_isIFR(bool isIFR);
+
+		bool get_isIFR();
+
+		void hit_the_road() override;
+	};
+
+
+	class Helicopters : public Air_Transport
+	{
+	private:
+		unsigned int screwCount;
+		std::string chassisType;
+	public:
+		Helicopters();
+
+		void set_wingCount(unsigned int screwCount);
+
+		unsigned int get_screwCount();
+
+		void set_chassisType(std::string chassisType);
+
+		std::string get_chassisType();
+
+		void hit_the_road() override;
+	};
+
+
+	class Trains : public Ground_Transport
+	{
+	private:
+		unsigned int trackGauge;
+	public:
+		Trains();
+
+		void set_trackGauge(unsigned int trackGauge);
+
+		unsigned int get_trackGauge();
+
+		void hit_the_road() override;
+	};
+
+
+	class Cars : public virtual Ground_Transport
+	{
+	protected:
+		unsigned int mantaincePricePerYear;
+		bool isAutopilot;
+	public:
+		Cars();
+
+		void set_mantaincePricePerYear(unsigned int mantaincePricePerYear);
+
+		unsigned int get_mantaincePricePerYear();
+
+		void set_isAutopilot(bool isAutopilot);
+
+		bool get_isAutopilot();
+
+		void hit_the_road() override;
+	};
