@@ -101,3 +101,145 @@ std::string transp::Ground_Transport::get_engineType()
 }
 
 
+void transp::Water_Transport::set_crewCount(unsigned int crewCount)
+{
+	Water_Transport::crewCount = crewCount;
+}
+
+unsigned int transp::Water_Transport::get_crewCount()
+{
+	return crewCount;
+}
+
+void transp::Water_Transport::set_isWomanOnBoard(bool isWomanOnBoard)
+{
+	Water_Transport::isWomanOnBoard = isWomanOnBoard;
+}
+
+bool transp::Water_Transport::get_isWomanOnBoard()
+{
+	return isWomanOnBoard;
+}
+
+
+transp::Planes::Planes() : 
+	transp::Air_Transport::Air_Transport()
+{
+	wingsCount = 1;
+	isIFR = false;
+}
+
+void transp::Planes::set_wingCount(unsigned int wingsCount)
+{
+	Planes::wingsCount = wingsCount;
+}
+
+unsigned int transp::Planes::get_wingsCount()
+{
+	return wingsCount;
+}
+
+void transp::Planes::set_isIFR(bool isIFR)
+{
+	Planes::isIFR = isIFR;
+}
+
+bool transp::Planes::get_isIFR()
+{
+	return isIFR;
+}
+
+void transp::Planes::hit_the_road()
+{
+	std::cout << "Cleaar prop!" << std::endl;
+}
+
+
+transp::Helicopters::Helicopters() : 
+	transp::Air_Transport::Air_Transport()
+{
+	screwCount = 1;
+	chassisType = "wheels";
+}
+
+void transp::Helicopters::set_wingCount(unsigned int screwCount)
+{
+	Helicopters::screwCount = screwCount;
+}
+
+unsigned int transp::Helicopters::get_screwCount()
+{
+	return screwCount;
+}
+
+void transp::Helicopters::set_chassisType(std::string chassisType)
+{
+	Helicopters::chassisType = chassisType;
+}
+
+std::string transp::Helicopters::get_chassisType()
+{
+	return chassisType;
+}
+
+void transp::Helicopters::hit_the_road()
+{
+	std::cout << "*playing Fortunate Son and getting flashbacks*" <<
+		std::endl;
+}
+
+
+transp::Trains::Trains() : 
+	transp::Ground_Transport::Ground_Transport()
+{
+	trackGauge = 1524;
+}
+
+void transp::Trains::set_trackGauge(unsigned int trackGauge)
+{
+	Trains::trackGauge = trackGauge;
+}
+
+unsigned int transp::Trains::get_trackGauge()
+{
+	return trackGauge;
+}
+
+void transp::Trains::hit_the_road()
+{
+	std::cout << "*Choo-choo!*" << std::endl;
+}
+
+
+
+transp::Cars::Cars() : 
+	transp::Ground_Transport::Ground_Transport()
+{
+	mantaincePricePerYear = 2000;
+	isAutopilot = false;
+}
+
+void transp::Cars::set_mantaincePricePerYear(unsigned int mantaincePricePerYear)
+{
+	Cars::mantaincePricePerYear = mantaincePricePerYear;
+}
+
+unsigned int transp::Cars::get_mantaincePricePerYear()
+{
+	return mantaincePricePerYear;
+}
+
+void transp::Cars::set_isAutopilot(bool isAutopilot)
+{
+	Cars::isAutopilot = isAutopilot;
+}
+
+bool transp::Cars::get_isAutopilot()
+{
+	return isAutopilot;
+}
+
+void transp::Cars::hit_the_road()
+{
+	std::cout << "*Vroom-vroom*" << std::endl;
+}
