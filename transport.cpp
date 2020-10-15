@@ -101,6 +101,13 @@ std::string transp::Ground_Transport::get_engineType()
 }
 
 
+transp::Water_Transport::Water_Transport() :
+	transp::Transport::Transport()
+{
+	crewCount = 2;
+	isWomanOnBoard = false;
+}
+
 void transp::Water_Transport::set_crewCount(unsigned int crewCount)
 {
 	Water_Transport::crewCount = crewCount;
@@ -211,7 +218,6 @@ void transp::Trains::hit_the_road()
 }
 
 
-
 transp::Cars::Cars() : 
 	transp::Ground_Transport::Ground_Transport()
 {
@@ -242,4 +248,69 @@ bool transp::Cars::get_isAutopilot()
 void transp::Cars::hit_the_road()
 {
 	std::cout << "*Vroom-vroom*" << std::endl;
+}
+
+
+transp::Submarines::Submarines() : 
+	transp::Water_Transport::Water_Transport()
+{
+	maxDepth = 200;
+}
+
+void transp::Submarines::set_maxDepth(unsigned int maxDepth)
+{
+	Submarines::maxDepth = maxDepth;
+}
+
+unsigned int transp::Submarines::get_maxDepth()
+{
+	return maxDepth;
+}
+
+void transp::Submarines::set_isYellow(bool isYellow)
+{
+	Submarines::isYellow = isYellow;
+}
+
+bool transp::Submarines::get_isYellow()
+{
+	return isYellow;
+}
+
+void transp::Submarines::hit_the_road()
+{
+	std::cout << "Blow ballast!" << std::endl;
+}
+
+
+transp::Ships::Ships() :
+	transp::Water_Transport::Water_Transport()
+{
+	displacement = 20000;
+	boardNumber = "A000AA";
+}
+
+void transp::Ships::set_displacement(unsigned int displacement)
+{
+	Ships::displacement = displacement;
+}
+
+unsigned int transp::Ships::get_displacement()
+{
+	return displacement;
+}
+
+void transp::Ships::set_boardNumber(std::string boardNumber)
+{
+	Ships::boardNumber = boardNumber;
+}
+
+std::string transp::Ships::get_boardNumber()
+{
+	return boardNumber;
+}
+
+void transp::Ships::hit_the_road()
+{
+	std::cout << "Full steam ahead!" << std::endl;
 }
