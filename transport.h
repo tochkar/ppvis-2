@@ -158,3 +158,51 @@ namespace transp
 
 		void hit_the_road() override;
 	};
+
+
+	class Submarines : public Water_Transport
+	{
+	private:
+		unsigned int maxDepth;
+		bool isYellow;
+	public:
+		Submarines();
+
+		void set_maxDepth(unsigned int maxDepth);
+
+		unsigned int get_maxDepth();
+
+		void set_isYellow(bool isYellow);
+
+		bool get_isYellow();
+
+		void hit_the_road() override;
+	};
+
+
+	class Ships : public virtual Water_Transport
+	{
+	protected:
+		unsigned int displacement;
+		std::string boardNumber;
+	public:
+		Ships();
+
+		void set_displacement(unsigned int displacement);
+
+		unsigned int get_displacement();
+
+		void set_boardNumber(std::string boardNumber);
+
+		std::string get_boardNumber();
+
+		void hit_the_road() override;
+	};
+
+
+	class Amphibians : public virtual Water_Transport,
+		public virtual Ground_Transport
+	{};
+}
+
+#endif
